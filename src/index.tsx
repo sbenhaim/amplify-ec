@@ -4,9 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Amplify from '@aws-amplify/core';
+import awsExport from './aws-exports';
+import { ThemeProvider } from '@material-ui/styles';
+import theme from './theme';
+import { CssBaseline } from '@material-ui/core';
+
+Amplify.configure(awsExport);
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+        <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

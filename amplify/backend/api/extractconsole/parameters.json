@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "extractconsole",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authextractconsole",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
